@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Booking Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('airlinesform.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .airline-form {
+            background: rgba(0, 0, 0, 0.78);
+            width: 65%;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .form-heading {
+            text-align: left;
+            font-size: 24px;
+            color: #fff;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #328bb1;
+        }
+
+        .form-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .form-field {
+            flex-basis: 48%;
+        }
+
+        .airline-select,
+        .airline-datepicker,
+        .airline-timepicker,
+        .airline-input,
+        .airline-textarea {
+            width: 100%;
+            padding: 10px;
+            background: rgba(73, 58, 58, 0.2);
+            border: none;
+            color: #fff;
+        }
+
+        .airline-textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .airline-radio-buttons {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .airline-radio-buttons li {
+            display: inline-block;
+            margin: 0 1em;
+        }
+
+        .airline-check {
+            background: #fff;
+            border: 1px solid #0091cd;
+            border-radius: 50%;
+            height: 18px;
+            width: 18px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .airline-check .airline-inside {
+            background: #0091cd;
+            border-radius: 50%;
+            height: 12px;
+            left: 3px;
+            position: absolute;
+            top: 3px;
+            width: 12px;
+            display: none;
+        }
+
+        .airline-radio-buttons li input[type="radio"]:checked + label .airline-check .airline-inside {
+            display: block;
+        }
+
+        .airline-submit-btn,
+        .airline-reset-btn {
+            text-transform: capitalize;
+            background: #0091cd;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            font-weight: 500;
+            font-size: 1.2em;
+            margin-top: 20px;
+            outline: none;
+            letter-spacing: 1px;
+            transition: 0.5s all;
+            cursor: pointer;
+        }
+
+        .airline-submit-btn:hover,
+        .airline-reset-btn:hover {
+            background: #d2741c;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="airline-form">
+            <form action="#" method="post">
+                <h2 class="form-heading">Booking Details</h2>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <select class="form-control airline-select" required>
+                            <option value="" disabled selected>From</option>
+                            <option value="India">India</option>
+                            <option value="Japan">Japan</option>
+                            <option value="China">China</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control airline-select" required>
+                            <option value="" disabled selected>To</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Malaysia">Malaysia</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <select class="form-control airline-select" required>
+                            <option>Preferred Airline</option>
+                            <option value="American Airline">American Airline</option>
+                            <option value="Delta Airlines">Delta Airlines</option>
+                            <option value="Frontier Airline">Frontier Airline</option>
+                            <option value="Jet Blue">Jet Blue</option>
+                            <option value="Southwest Airlines">Southwest Airlines</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control airline-select" required>
+                            <option>Preferred Seating</option>
+                            <option value="Window">Window</option>
+                            <option value="Aisle">Aisle</option>
+                            <option value="Special">Special (Request note below)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input id="datepicker" name="Text" type="text" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required class="form-control airline-datepicker">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" id="timepicker" name="Time" class="form-control airline-timepicker" placeholder="Departure Time" value="" onkeypress="return false">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <select class="form-control airline-select" required>
+                            <option value="">Adult(12+ Yrs)</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select class="form-control airline-select" required>
+                            <option value="">Children(2-11 Yrs)</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select class="form-control airline-select" required>
+                            <option value="">Infant(under 2Yrs)</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <h6>Select your Fare</h6>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="one-way-option" name="fare-selector" class="custom-control-input" required>
+                            <label class="custom-control-label" for="one-way-option">One Way</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="round-trip-option" name="fare-selector" class="custom-control-input" required>
+                            <label class="custom-control-label" for="round-trip-option">Round-Trip</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input id="datepicker1" name="Text" type="text" placeholder="Return Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required class="form-control airline-datepicker">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" id="timepicker1" name="Time" class="form-control airline-timepicker" placeholder="Return Time" value="" onkeypress="return false">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea name="Message" placeholder="Any Message..." class="form-control airline-textarea"></textarea>
+                </div>
+                <h3 class="form-heading">Personal Details</h3>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" name="FullName" placeholder="Full Name" required class="form-control airline-input">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" name="PhoneNumber" placeholder="Phone Number" required class="form-control airline-input">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="Email" placeholder="Email" required class="form-control airline-input">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <input type="reset" value="Clear Form" class="btn btn-secondary">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
